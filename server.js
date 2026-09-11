@@ -3,7 +3,9 @@ const connectDB = require("./config/db");
 const app = express();
 require("dotenv").config();
 const flowerRoutes = require("./routes/flowersRoutes");
+const cors = require("cors");
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/flowers", flowerRoutes);
